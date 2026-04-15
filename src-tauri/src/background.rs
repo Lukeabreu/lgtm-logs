@@ -93,7 +93,6 @@ impl BackgroundWorker {
                 local_info.client_id.clone(),
                 version.clone(),
             );
-            let ban_list = BanList::new();
             app_handle.manage(StatsApi::new(
                 base_url,
                 local_info.client_id.clone(),
@@ -108,7 +107,6 @@ impl BackgroundWorker {
                 local_info,
                 local_player_repository,
                 heartbeat_api,
-                ban_list,
             };
 
             live::start(args).expect("unexpected error occurred in parser");
